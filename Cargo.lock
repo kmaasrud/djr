@@ -5,7 +5,7 @@ version = 3
 [[package]]
 name = "djr"
 version = "0.1.0"
-source = "git+https://git.sr.ht/~kmaasrud/djr#71bc8b05c76c32fc82424b9f0ca38b1e5ec6ffe3"
+source = "git+https://git.sr.ht/~kmaasrud/djr#4ec96e072e48f9087f9b60123b57c2d69506e01c"
 dependencies = [
  "phf",
 ]
