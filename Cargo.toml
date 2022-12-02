@@ -1,9 +1,20 @@
 [package]
 name = "djr-cli"
 version = "0.1.0"
+authors = ["Knut Magnus Aasrud <km@aasrud.com>"]
 edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+license = "MIT"
+description = "Djot parser written in pure Rust"
+repository = "https://github.com/kmaasrud/djr"
+keywords = ["djot", "markup"]
+categories = ["text-processing"]
+readme = "README.md"
 
 [dependencies]
 djr = { git = "https://git.sr.ht/~kmaasrud/djr" }
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true
+panic = "abort"
