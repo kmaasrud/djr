@@ -31,7 +31,8 @@ pub(crate) fn args() -> Vec<Arg> {
                 enumerated.next();
             },
             ("--fmt", _) => fields.push(Arg::Fmt),
-            (file, _) => fields.push(Arg::File(file.to_owned())),
+            (file, _) if !file.starts_with("-") => fields.push(Arg::File(file.to_owned())),
+            _ => {},
         }
     }
 
