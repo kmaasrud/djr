@@ -1,0 +1,27 @@
+on:
+  issues:
+    types: [opened]
+    
+jobs:
+  auto-response:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: derekprior/add-autoresponse@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        respondableId: ${{ github.event.issue.node_id }}
+        response: "This issue has been mirrored into a ticket on Sourcehut.\nYou can find it [here](https://todo.sr.ht/~kmaasrud/djr)."
+        author: ${{ github.event.issue.user.login }}
+
+  mirror:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: athorp96/sourcehut_issue_mirror@master
+      with:
+        title: ${{ github.event.issue.title}
+        body: ${{ github.event.issue.body}}
+        submitter: ${{ github.event.issue.user.login }}
+        tracker-owner: "~kmaasrud"
+        tracker-name: "djr"
+        oauth-token: ${{ secrets.SRHT_OAUTH_TOKEN }}
