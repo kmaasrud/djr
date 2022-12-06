@@ -13,6 +13,9 @@ readme = "README.md"
 [dependencies]
 djr = { git = "https://git.sr.ht/~kmaasrud/djr" }
 
+[build-dependencies]
+cargo-lock = "8.0.3"
+
 [profile.release]
 codegen-units = 1
 lto = true
