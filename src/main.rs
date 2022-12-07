@@ -1,26 +1,32 @@
 mod argparse;
-mod help;
-mod version;
-
-use std::path::PathBuf;
 
 use djr::parse::Parser;
+use std::path::PathBuf;
 
 fn main() {
     if argparse::help() {
-        version::version();
-        help::help();
+        println!(
+            "djr v{}\n{}",
+            env!("DJR_VERSION"),
+            include_str!("./help.txt")
+        );
+        std::process::exit(1);
     }
 
     if argparse::version() {
-        version::version();
+        println!(
+            "djr v{} (cli v{})",
+            env!("DJR_VERSION"),
+            env!("CARGO_PKG_VERSION")
+        );
+        std::process::exit(1);
     }
 
     let mut file = PathBuf::new();
     for field in argparse::args() {
         match field {
             argparse::Arg::File(f) => file.push(f),
-            _ => {},
+            _ => {}
         }
     }
 
