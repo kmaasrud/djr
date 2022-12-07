@@ -5,21 +5,21 @@ use std::path::PathBuf;
 
 fn main() {
     if argparse::help() {
-        println!(
-            "djr v{}\n{}",
+        eprint!(
+            "djr v{}\nKnut Magnus Aasrud <km@aasrud.com>\n\n{}",
             env!("DJR_VERSION"),
             include_str!("./help.txt")
         );
-        std::process::exit(1);
+        std::process::exit(0);
     }
 
     if argparse::version() {
-        println!(
+        eprintln!(
             "djr v{} (cli v{})",
             env!("DJR_VERSION"),
             env!("CARGO_PKG_VERSION")
         );
-        std::process::exit(1);
+        std::process::exit(0);
     }
 
     let mut file = PathBuf::new();
