@@ -1,5 +1,5 @@
 {
-  description = "Djot CLI";
+  description = "Djot command line interface";
 
   inputs = {
     utils.url = "github:numtide/flake-utils";
@@ -18,25 +18,21 @@
           overlays = [ (import rust) ];
         };
 
-        inherit (pkgs) rustPlatform mkShell stdenv lib;
-        buildInputs = [ ];
-        nativeBuildInputs = [ ];
-      in rec {
+        inherit (pkgs) rustPlatform mkShell lib;
+      in
+      rec {
         # `nix build`
-        packages.${pname} = rustPlatform.buildRustPackage {
-          inherit pname version buildInputs nativeBuildInputs;
+        packages.default = rustPlatform.buildRustPackage {
+          inherit pname version;
           src = ./.;
-          cargoSha256 = "";
+          cargoSha256 = "sha256-S1noIq6mIE38pGx5dj73r1otH5gCAykaCem+2rR8qi0=";
         };
-        defaultPackage = packages.${pname};
 
         # `nix run`
-        apps.${pname} = utils.lib.mkApp { drv = packages.${pname}; };
-        defaultApp = apps.${pname};
+        apps.default = utils.lib.mkApp { drv = packages.default; };
 
         # `nix develop`
         devShells.default = mkShell {
-          inherit nativeBuildInputs;
           buildInputs = with pkgs;
             [
               (rust-bin.selectLatestNightlyWith (toolchain: toolchain.default))
