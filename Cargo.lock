@@ -16,8 +16,9 @@ dependencies = [
 
 [[package]]
 name = "djr"
-version = "0.1.0"
-source = "git+https://git.sr.ht/~kmaasrud/djr#4ec96e072e48f9087f9b60123b57c2d69506e01c"
+version = "0.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b7871f61c290b08f040581712fb2071ba9954cea5c04c6bc477f4bf2e7abf8d7"
 dependencies = [
  "phf",
 ]

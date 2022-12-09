@@ -15,7 +15,7 @@ name = "djr"
 path = "src/main.rs"
 
 [dependencies]
-djr = { git = "https://git.sr.ht/~kmaasrud/djr" }
+djr = "0.0.1"
 
 [build-dependencies]
 cargo-lock = "8.0.3"
