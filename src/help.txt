@@ -1,5 +1,8 @@
 usage: djr [option] <file> ...
 
+arguments:
+    file            one or more djot source file(s)
+
 options:
     -h --help       show this text
     -v --version    show the version number
