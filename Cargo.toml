@@ -4,11 +4,15 @@ version = "0.1.0"
 authors = ["Knut Magnus Aasrud <km@aasrud.com>"]
 edition = "2021"
 license = "MIT"
-description = "Djot parser written in pure Rust"
+description = "Djot rendering CLI based on the djr crate"
 repository = "https://github.com/kmaasrud/djr"
-keywords = ["djot", "markup"]
+keywords = ["djot", "markup", "cli"]
 categories = ["text-processing"]
 readme = "README.md"
+
+[[bin]]
+name = "djr"
+path = "src/main.rs"
 
 [dependencies]
 djr = { git = "https://git.sr.ht/~kmaasrud/djr" }
