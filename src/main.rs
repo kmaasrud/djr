@@ -1,6 +1,6 @@
 mod argparse;
 
-use djr::parse::Parser;
+use djot::parse::Parser;
 use std::path::PathBuf;
 
 fn main() {

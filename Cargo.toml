@@ -1,11 +1,11 @@
 [package]
-name = "djr-cli"
-version = "0.0.1"
+name = "djr"
+version = "0.0.2"
 authors = ["Knut Magnus Aasrud <km@aasrud.com>"]
 edition = "2021"
 license = "MIT"
-description = "Djot rendering CLI based on the djr crate"
-repository = "https://github.com/kmaasrud/djr"
+description = "Djot rendering CLI based on the djot crate"
+repository = "https://github.com/kmaasrud/djot.rs"
 keywords = ["djot", "markup", "cli"]
 categories = ["text-processing"]
 readme = "README.md"
@@ -15,7 +15,7 @@ name = "djr"
 path = "src/main.rs"
 
 [dependencies]
-djr = "0.0.1"
+djot = "0.0.1"
 
 [build-dependencies]
 cargo-lock = "8.0.3"

@@ -15,20 +15,20 @@ dependencies = [
 ]
 
 [[package]]
-name = "djr"
+name = "djot"
 version = "0.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b7871f61c290b08f040581712fb2071ba9954cea5c04c6bc477f4bf2e7abf8d7"
+checksum = "2472faace1db4ee71b1258ca703ce2bca45ab6c6dac8cf1487a44b22030c0a4e"
 dependencies = [
  "phf",
 ]
 
 [[package]]
-name = "djr-cli"
-version = "0.0.1"
+name = "djr"
+version = "0.0.2"
 dependencies = [
  "cargo-lock",
- "djr",
+ "djot",
 ]
 
 [[package]]
